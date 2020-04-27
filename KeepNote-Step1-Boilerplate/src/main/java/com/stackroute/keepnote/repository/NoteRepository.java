@@ -1,9 +1,11 @@
 package com.stackroute.keepnote.repository;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.stackroute.keepnote.model.Note;
 
@@ -61,7 +63,11 @@ public class NoteRepository {
 	/* This method should return the list of notes */
 
 	public List<Note> getAllNotes() {
-		return noteRepo;
+		ArrayList<Note> sortedDates = (ArrayList<Note>) noteRepo
+				.stream().sorted(Comparator.comparing(Note::getCreatedAt).reversed())
+				.collect(Collectors.toList());
+		sortedDates.forEach(System.out::println);
+		return sortedDates;
 	}
 
 	/*

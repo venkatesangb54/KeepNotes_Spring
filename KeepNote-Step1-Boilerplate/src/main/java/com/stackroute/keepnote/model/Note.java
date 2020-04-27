@@ -76,4 +76,9 @@ public class Note {
 				+ noteStatus + ", createdAt=" + createdAt + "]";
 	}
 
+	/*
+	 * @Override public int compareTo(Note arg0) { // TODO Auto-generated method
+	 * stub return 0; }
+	 */
+
 }
