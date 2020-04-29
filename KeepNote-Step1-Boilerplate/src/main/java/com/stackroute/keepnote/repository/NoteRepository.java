@@ -66,7 +66,7 @@ public class NoteRepository {
 		ArrayList<Note> sortedDates = (ArrayList<Note>) noteRepo
 				.stream().sorted(Comparator.comparing(Note::getCreatedAt).reversed())
 				.collect(Collectors.toList());
-		sortedDates.forEach(System.out::println);
+		//sortedDates.forEach(System.out::println);
 		return sortedDates;
 	}
 
